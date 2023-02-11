@@ -1,0 +1,1 @@
+Veamos que tal funciona esto de la escritura en python
