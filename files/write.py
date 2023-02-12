@@ -9,3 +9,6 @@ with open("test.txt", "w") as file:
 
 with open("test.txt", "r") as file:
     __readFile__(file)
+
+# a for writing (truncating the file if it already exists)
+# a+ for reading and writing (appending to the end of the file if it exists)
