@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import csv
 import re
 
@@ -16,7 +15,7 @@ def replace_domain(address, old_domain, new_domain):
 def main():
     old_domain, new_domain = 'abc.edu', 'xyz.edu'
     csv_file_location = '/home/student-03-f290dada6701/data/user_emails.csv'
-    report_file = '/home/student-03-f290dada6701' + '/updated_user_emails.csv'
+    report_file = '/home/student-03-f290dada6701/data' + '/updated_user_emails.csv'
 
     user_email_list = []
     old_domain_email_list = []
@@ -39,7 +38,9 @@ def main():
             for old_domain, new_domain in zip(old_domain_email_list, new_domain_email_list):
                 if user[email_index] == ' ' + old_domain:
                     user[email_index] = ' ' + new_domain
-        f.close()
+    ## I have a error with indentation here
+    # Error solved: I had to remove the indentation of the line below
+    f.close()
 
     with open(report_file, 'w+') as output_file:
         writer = csv.writer(output_file)
@@ -47,3 +48,8 @@ def main():
         output_file.close()
 
 main()
+
+#Here, you will find a file named script.py. 
+#The aim of this script is to use regex to find all instances 
+#of the old domain ("abc.edu") in the user_emails.csv 
+#file and then replace them with the new domain ("xyz.edu").
